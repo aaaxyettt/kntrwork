@@ -38,4 +38,28 @@ int showEl(const int *ar, int size, int n, int m){
 	return 0;
 }
 
+void swap(int &a,int  &b){
+	int temp = a;
+	a = b;
+	b = temp;
+}
 
+
+void selectionSort(int *ar, int size){
+        for(int i = 0; i < size; i++){
+                swap(ar[i], ar[search(ar, size, i)]);
+        }
+}
+
+
+int search(int *ar, int size, int i){
+        int min = ar[i];
+        int index = 0;
+        for(int j = i; j < size; j++){
+                  if(ar[j] <= min){
+                          min = ar[j];
+                          index = j;
+                  }
+        }
+        return index;
+}
