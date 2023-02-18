@@ -99,7 +99,10 @@ int getMax(const int *ar, int size){
 
         if(right == left){
                 std::cout << "max = " << ar[left] << " "  << "deepRec = " << deepRec << std::endl;
-                return 0;
+                left = 0;
+		right = size - 1;
+		deepRec = 1;
+		return 0;
         }
 
         if(ar[left] <= ar[right]){
@@ -124,6 +127,9 @@ int getMin(const int *ar, int size){
 
         if(right == left){
                 std::cout << "min = " << ar[left] << " " << "deepRec = " << deepRec << std::endl;
+		left = 0;
+		right = size - 1;
+		deepRec = 1;
                 return 0;
         }
         if(ar[left] <= ar[right]){
